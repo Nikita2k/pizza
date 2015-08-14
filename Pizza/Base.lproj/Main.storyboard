@@ -7,7 +7,7 @@
         <!--List View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ListViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="NTListViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,10 +15,23 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Ur2-hP-ghi">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ur2-hP-ghi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="L1C-o4-7ww"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Ur2-hP-ghi" secondAttribute="bottom" id="Lej-Ti-KYn"/>
+                            <constraint firstItem="Ur2-hP-ghi" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="VhN-1k-ZKp"/>
+                            <constraint firstAttribute="trailing" secondItem="Ur2-hP-ghi" secondAttribute="trailing" id="det-XL-44k"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="BDt-cW-FBb"/>
                     <connections>
+                        <outlet property="placesTableView" destination="Ur2-hP-ghi" id="0XF-Gb-HXp"/>
                         <segue destination="xn6-NE-FyT" kind="show" identifier="showPizzaDetail" id="cU8-pV-Gg6"/>
                     </connections>
                 </viewController>
@@ -26,10 +39,10 @@
             </objects>
             <point key="canvasLocation" x="1112" y="269"/>
         </scene>
-        <!--View Controller-->
+        <!--Pizza Details View Controller-->
         <scene sceneID="o3h-Ud-7Dy">
             <objects>
-                <viewController id="xn6-NE-FyT" sceneMemberID="viewController">
+                <viewController id="xn6-NE-FyT" customClass="NTPizzaDetailsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pOG-HE-qql"/>
                         <viewControllerLayoutGuide type="bottom" id="cj8-rg-Jvs"/>

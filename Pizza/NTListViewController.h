@@ -1,5 +1,5 @@
 //
-//  PizzaDetailsViewController.h
+//  ListViewController.h
 //  Pizza
 //
 //  Created by Nikita Tuk on 14/08/15.
@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PizzaDetailsViewController : UIViewController
+@interface NTListViewController : UIViewController
+
 
 @end
+

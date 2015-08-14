@@ -10,12 +10,14 @@
 		ABBEF32C1B7E12B000EC0C12 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBEF32B1B7E12B000EC0C12 /* main.m */; };
 		ABBEF32F1B7E12B000EC0C12 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBEF32E1B7E12B000EC0C12 /* AppDelegate.m */; };
 		ABBEF3321B7E12B000EC0C12 /* Pizza.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ABBEF3301B7E12B000EC0C12 /* Pizza.xcdatamodeld */; };
-		ABBEF3351B7E12B000EC0C12 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBEF3341B7E12B000EC0C12 /* ListViewController.m */; };
+		ABBEF3351B7E12B000EC0C12 /* NTListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBEF3341B7E12B000EC0C12 /* NTListViewController.m */; };
 		ABBEF3381B7E12B000EC0C12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABBEF3361B7E12B000EC0C12 /* Main.storyboard */; };
 		ABBEF33A1B7E12B000EC0C12 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABBEF3391B7E12B000EC0C12 /* Images.xcassets */; };
 		ABBEF33D1B7E12B000EC0C12 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABBEF33B1B7E12B000EC0C12 /* LaunchScreen.xib */; };
 		ABBEF3491B7E12B000EC0C12 /* PizzaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBEF3481B7E12B000EC0C12 /* PizzaTests.m */; };
-		ABBEF3541B7E13B900EC0C12 /* PizzaDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBEF3531B7E13B900EC0C12 /* PizzaDetailsViewController.m */; };
+		ABBEF3541B7E13B900EC0C12 /* NTPizzaDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBEF3531B7E13B900EC0C12 /* NTPizzaDetailsViewController.m */; };
+		ABBEF3591B7E151700EC0C12 /* NTPizzaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBEF3571B7E151700EC0C12 /* NTPizzaCell.m */; };
+		ABBEF35A1B7E151700EC0C12 /* NTPizzaCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABBEF3581B7E151700EC0C12 /* NTPizzaCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,16 +37,19 @@
 		ABBEF32D1B7E12B000EC0C12 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		ABBEF32E1B7E12B000EC0C12 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		ABBEF3311B7E12B000EC0C12 /* Pizza.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pizza.xcdatamodel; sourceTree = "<group>"; };
-		ABBEF3331B7E12B000EC0C12 /* ListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
-		ABBEF3341B7E12B000EC0C12 /* ListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
+		ABBEF3331B7E12B000EC0C12 /* NTListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NTListViewController.h; sourceTree = "<group>"; };
+		ABBEF3341B7E12B000EC0C12 /* NTListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NTListViewController.m; sourceTree = "<group>"; };
 		ABBEF3371B7E12B000EC0C12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ABBEF3391B7E12B000EC0C12 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		ABBEF33C1B7E12B000EC0C12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		ABBEF3421B7E12B000EC0C12 /* PizzaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PizzaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABBEF3471B7E12B000EC0C12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ABBEF3481B7E12B000EC0C12 /* PizzaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PizzaTests.m; sourceTree = "<group>"; };
-		ABBEF3521B7E13B900EC0C12 /* PizzaDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PizzaDetailsViewController.h; sourceTree = "<group>"; };
-		ABBEF3531B7E13B900EC0C12 /* PizzaDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PizzaDetailsViewController.m; sourceTree = "<group>"; };
+		ABBEF3521B7E13B900EC0C12 /* NTPizzaDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTPizzaDetailsViewController.h; sourceTree = "<group>"; };
+		ABBEF3531B7E13B900EC0C12 /* NTPizzaDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTPizzaDetailsViewController.m; sourceTree = "<group>"; };
+		ABBEF3561B7E151700EC0C12 /* NTPizzaCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTPizzaCell.h; sourceTree = "<group>"; };
+		ABBEF3571B7E151700EC0C12 /* NTPizzaCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTPizzaCell.m; sourceTree = "<group>"; };
+		ABBEF3581B7E151700EC0C12 /* NTPizzaCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NTPizzaCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,17 +91,18 @@
 		ABBEF3281B7E12B000EC0C12 /* Pizza */ = {
 			isa = PBXGroup;
 			children = (
+				ABBEF3551B7E147500EC0C12 /* PizzaCell */,
 				ABBEF32D1B7E12B000EC0C12 /* AppDelegate.h */,
 				ABBEF32E1B7E12B000EC0C12 /* AppDelegate.m */,
-				ABBEF3331B7E12B000EC0C12 /* ListViewController.h */,
-				ABBEF3341B7E12B000EC0C12 /* ListViewController.m */,
+				ABBEF3331B7E12B000EC0C12 /* NTListViewController.h */,
+				ABBEF3341B7E12B000EC0C12 /* NTListViewController.m */,
 				ABBEF3361B7E12B000EC0C12 /* Main.storyboard */,
 				ABBEF3391B7E12B000EC0C12 /* Images.xcassets */,
 				ABBEF33B1B7E12B000EC0C12 /* LaunchScreen.xib */,
 				ABBEF3301B7E12B000EC0C12 /* Pizza.xcdatamodeld */,
 				ABBEF3291B7E12B000EC0C12 /* Supporting Files */,
-				ABBEF3521B7E13B900EC0C12 /* PizzaDetailsViewController.h */,
-				ABBEF3531B7E13B900EC0C12 /* PizzaDetailsViewController.m */,
+				ABBEF3521B7E13B900EC0C12 /* NTPizzaDetailsViewController.h */,
+				ABBEF3531B7E13B900EC0C12 /* NTPizzaDetailsViewController.m */,
 			);
 			path = Pizza;
 			sourceTree = "<group>";
@@ -125,6 +131,16 @@
 				ABBEF3471B7E12B000EC0C12 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ABBEF3551B7E147500EC0C12 /* PizzaCell */ = {
+			isa = PBXGroup;
+			children = (
+				ABBEF3561B7E151700EC0C12 /* NTPizzaCell.h */,
+				ABBEF3571B7E151700EC0C12 /* NTPizzaCell.m */,
+				ABBEF3581B7E151700EC0C12 /* NTPizzaCell.xib */,
+			);
+			name = PizzaCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,6 +223,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABBEF35A1B7E151700EC0C12 /* NTPizzaCell.xib in Resources */,
 				ABBEF3381B7E12B000EC0C12 /* Main.storyboard in Resources */,
 				ABBEF33D1B7E12B000EC0C12 /* LaunchScreen.xib in Resources */,
 				ABBEF33A1B7E12B000EC0C12 /* Images.xcassets in Resources */,
@@ -229,8 +246,9 @@
 			files = (
 				ABBEF32F1B7E12B000EC0C12 /* AppDelegate.m in Sources */,
 				ABBEF32C1B7E12B000EC0C12 /* main.m in Sources */,
-				ABBEF3541B7E13B900EC0C12 /* PizzaDetailsViewController.m in Sources */,
-				ABBEF3351B7E12B000EC0C12 /* ListViewController.m in Sources */,
+				ABBEF3591B7E151700EC0C12 /* NTPizzaCell.m in Sources */,
+				ABBEF3541B7E13B900EC0C12 /* NTPizzaDetailsViewController.m in Sources */,
+				ABBEF3351B7E12B000EC0C12 /* NTListViewController.m in Sources */,
 				ABBEF3321B7E12B000EC0C12 /* Pizza.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
