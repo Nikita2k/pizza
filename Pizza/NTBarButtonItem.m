@@ -22,13 +22,28 @@
     
     if (self) {
         
-        self.actionBlock = actionBlock;
+        _actionBlock = [actionBlock copy];
         _button = [UIButton buttonWithType:UIButtonTypeSystem];
         self.customView = _button;
         [_button setImage:image forState:UIControlStateNormal];
         [_button addTarget:self action:@selector(buttonTouched) forControlEvents:UIControlEventTouchUpInside];
         _button.frame = CGRectMake(0.0, 0.0, image.size.width, image.size.height);
         _button.userInteractionEnabled = YES;
+        
+    }
+    
+    return self;
+    
+}
+
+- (instancetype)initWithBarButtonSystemItem:(UIBarButtonSystemItem)systemItem action:(NTBarButtonItemAction)actionBlock {
+    
+    self = [super initWithBarButtonSystemItem:systemItem target:nil action:@selector(buttonTouched)];
+    
+    if (self) {
+        
+        self.target = self;
+        _actionBlock = [actionBlock copy];
         
     }
     

@@ -12,6 +12,6 @@
 
 + (instancetype)sharedInstance;
 
-- (void)updateVenues;
+- (void)updateVenuesWithCompletionBlock:(void (^)(NSError *error))completionBlock;
 
 @end

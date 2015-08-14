@@ -39,6 +39,7 @@
 		ABCD49D01B7E1B91003527B5 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCD49CA1B7E1B91003527B5 /* Location.m */; };
 		ABCD49D11B7E1B91003527B5 /* Venue.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCD49CC1B7E1B91003527B5 /* Venue.m */; };
 		ABCD49D51B7E1C3A003527B5 /* NTFourSquareApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCD49D41B7E1C3A003527B5 /* NTFourSquareApiClient.m */; };
+		ABCD49D91B7E29A1003527B5 /* NTBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCD49D81B7E29A1003527B5 /* NTBarButtonItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,8 @@
 		ABCD49CD1B7E1B91003527B5 /* ModelIncludes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelIncludes.h; sourceTree = "<group>"; };
 		ABCD49D31B7E1C3A003527B5 /* NTFourSquareApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTFourSquareApiClient.h; sourceTree = "<group>"; };
 		ABCD49D41B7E1C3A003527B5 /* NTFourSquareApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTFourSquareApiClient.m; sourceTree = "<group>"; };
+		ABCD49D71B7E29A1003527B5 /* NTBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTBarButtonItem.h; sourceTree = "<group>"; };
+		ABCD49D81B7E29A1003527B5 /* NTBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTBarButtonItem.m; sourceTree = "<group>"; };
 		CF6D7B2DF5DAE7D02F32305B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E9DE28DB945DEF25EAB0166D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F7B93D330CC5C32AD9D4AFC2 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,6 +142,7 @@
 		ABBEF3281B7E12B000EC0C12 /* Pizza */ = {
 			isa = PBXGroup;
 			children = (
+				ABCD49D61B7E2981003527B5 /* Custom UI */,
 				ABCD49D21B7E1BBB003527B5 /* API */,
 				ABCD49C21B7E1B91003527B5 /* Models */,
 				ABBEF3551B7E147500EC0C12 /* PizzaCell */,
@@ -242,6 +246,15 @@
 				ABCD49D41B7E1C3A003527B5 /* NTFourSquareApiClient.m */,
 			);
 			name = API;
+			sourceTree = "<group>";
+		};
+		ABCD49D61B7E2981003527B5 /* Custom UI */ = {
+			isa = PBXGroup;
+			children = (
+				ABCD49D71B7E29A1003527B5 /* NTBarButtonItem.h */,
+				ABCD49D81B7E29A1003527B5 /* NTBarButtonItem.m */,
+			);
+			name = "Custom UI";
 			sourceTree = "<group>";
 		};
 		D612423BC7F00909DDFE53B9 /* Frameworks */ = {
@@ -411,6 +424,7 @@
 				ABCD49B71B7E19F5003527B5 /* NTPizzaListModel.xcdatamodeld in Sources */,
 				ABBEF3591B7E151700EC0C12 /* NTPizzaCell.m in Sources */,
 				ABBEF3541B7E13B900EC0C12 /* NTPizzaDetailsViewController.m in Sources */,
+				ABCD49D91B7E29A1003527B5 /* NTBarButtonItem.m in Sources */,
 				ABCD49D51B7E1C3A003527B5 /* NTFourSquareApiClient.m in Sources */,
 				ABCD49CF1B7E1B91003527B5 /* _Venue.m in Sources */,
 				ABCD49D01B7E1B91003527B5 /* Location.m in Sources */,
@@ -647,6 +661,7 @@
 				ABCD49C01B7E1B0C003527B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

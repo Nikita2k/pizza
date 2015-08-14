@@ -13,5 +13,6 @@ typedef void (^NTBarButtonItemAction)(UIBarButtonItem *sender);
 @interface NTBarButtonItem : UIBarButtonItem
 
 - (instancetype)initWithImage:(UIImage *)image actionBlock:(NTBarButtonItemAction)actionBlock;
+- (instancetype)initWithBarButtonSystemItem:(UIBarButtonSystemItem)systemItem action:(NTBarButtonItemAction)actionBlock;
 
 @end

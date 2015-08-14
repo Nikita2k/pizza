@@ -13,6 +13,7 @@
 #import "NTFourSquareApiClient.h"
 #import "Venue.h"
 #import "Location.h"
+#import "NTBarButtonItem.h"
 
 static NSString *const kPizzaPlaceCellIdentifier = @"kPizzaPlaceCellIdentifier";
 static NSString *const kShowDetailsSegue = @"showPizzaDetail";
@@ -29,13 +30,8 @@ static NSString *const kShowDetailsSegue = @"showPizzaDetail";
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    
-    //[[NTFourSquareApiClient sharedInstance] updateVenues];
-    
-    // TODO: background?
-    self.venues = [Venue MR_findAllSortedBy:@"name" ascending:YES];
-    
     [self registerTableViewCells];
+    [self addRefreshButton];
 
 }
 
@@ -101,6 +97,51 @@ static NSString *const kShowDetailsSegue = @"showPizzaDetail";
     [UINib nibWithNibName:NSStringFromClass([NTPizzaCell class]) bundle:mainBundle];
     
     [self.placesTableView registerNib:cellNib forCellReuseIdentifier:kPizzaPlaceCellIdentifier];
+    
+}
+
+- (void)addRefreshButton {
+    
+    __weak __typeof(self) weakSelf = self;
+    NTBarButtonItem *item = [[NTBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh action:^(UIBarButtonItem *sender) {
+        
+        [weakSelf fetchDataFromServer];
+        
+    }];
+    
+    self.navigationItem.rightBarButtonItem = item;
+    
+}
+
+- (void)fetchDataFromServer {
+    
+    __weak __typeof(self) weakSelf = self;
+    [[NTFourSquareApiClient sharedInstance] updateVenuesWithCompletionBlock:^(NSError *error) {
+        
+        if (error == nil) {
+            
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                
+                // TODO: check if I can fetch with it on background
+                // can use self without strongify here, because if self is deallocated
+                // that means I don't need dispalying anymore, rest of commands can be ommited
+                weakSelf.venues = [Venue MR_findAllSortedBy:@"name" ascending:YES];
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    
+                    [weakSelf.placesTableView reloadData];
+                    
+                });
+                
+            });
+            
+        } else {
+            
+            [[[UIAlertView alloc] initWithTitle:@"Error" message:@"Something went wrong" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+            
+        }
+        
+    }];
     
 }
 

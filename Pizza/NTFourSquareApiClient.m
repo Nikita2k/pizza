@@ -46,7 +46,9 @@ static NSString *const kBaseURL = @"https://api.foursquare.com/v2/";
     
 }
 
-- (void)updateVenues {
+- (void)updateVenuesWithCompletionBlock:(void (^)(NSError *error))completionBlock {
+    
+    NSParameterAssert(completionBlock);
     
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
     
@@ -64,13 +66,16 @@ static NSString *const kBaseURL = @"https://api.foursquare.com/v2/";
             [Venue MR_importFromArray:venues];
             
         } completion:^(BOOL success, NSError *error) {
-            NSLog(@"success");
+            
+            // I can refer here without checking for block, as it is checked in assertion
+            // without this I'll check it like if (completionBlock)
+            completionBlock(error);
+            
         }];
-        NSLog(@"success");
         
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         
-        NSLog(@"failure");
+        completionBlock(error);
         
     }];
     
