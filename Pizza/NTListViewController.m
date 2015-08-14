@@ -30,6 +30,10 @@ static NSString *const kShowDetailsSegue = @"showPizzaDetail";
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    
+    // CMT: showing last request data. May be good to move to bg queue and fetch there
+    // also can show empty list
+    self.venues = [Venue MR_findAllSortedBy:@"name" ascending:YES];
     [self registerTableViewCells];
     [self addRefreshButton];
 
