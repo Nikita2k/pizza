@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Nikita Took. All rights reserved.
 //
 
-#import <MagicalRecord/CoreData+MagicalRecord.h>
+#import <MagicalRecord/MagicalRecord.h>
 #import "NTFourSquareApiClient.h"
 #import "Venue.h"
 
@@ -63,11 +63,11 @@ static NSString *const kBaseURL = @"https://api.foursquare.com/v2/";
         [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
             
             NSArray *venues = [[responseObject objectForKey:@"response"] objectForKey:@"venues"];
-            [Venue MR_importFromArray:venues];
+            [Venue MR_importFromArray:venues inContext:localContext];
             
         } completion:^(BOOL success, NSError *error) {
             
-            // I can refer here without checking for block, as it is checked in assertion
+            // CMT I can refer here without checking for block, as it is checked in assertion
             // without this I'll check it like if (completionBlock)
             completionBlock(error);
             

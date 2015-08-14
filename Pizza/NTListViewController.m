@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Nikita Took. All rights reserved.
 //
 
-#import <MagicalRecord/CoreData+MagicalRecord.h>
+#import <MagicalRecord/MagicalRecord.h>
 #import "NTListViewController.h"
 #import "NTPizzaCell.h"
 #import "NTPizzaDetailsViewController.h"
