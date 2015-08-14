@@ -1,27 +1,22 @@
 //
-//  ViewController.m
+//  ListViewController.m
 //  Pizza
 //
 //  Created by Nikita Tuk on 14/08/15.
 //  Copyright (c) 2015 Nikita Took. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "ListViewController.h"
 
-@interface ViewController ()
+@interface ListViewController ()
 
 @end
 
-@implementation ViewController
+@implementation ListViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  PizzaDetailsViewController.h
 //  Pizza
 //
 //  Created by Nikita Tuk on 14/08/15.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface PizzaDetailsViewController : UIViewController
 
 @end
-

@@ -10,11 +10,12 @@
 		ABBEF32C1B7E12B000EC0C12 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBEF32B1B7E12B000EC0C12 /* main.m */; };
 		ABBEF32F1B7E12B000EC0C12 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBEF32E1B7E12B000EC0C12 /* AppDelegate.m */; };
 		ABBEF3321B7E12B000EC0C12 /* Pizza.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ABBEF3301B7E12B000EC0C12 /* Pizza.xcdatamodeld */; };
-		ABBEF3351B7E12B000EC0C12 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBEF3341B7E12B000EC0C12 /* ViewController.m */; };
+		ABBEF3351B7E12B000EC0C12 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBEF3341B7E12B000EC0C12 /* ListViewController.m */; };
 		ABBEF3381B7E12B000EC0C12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABBEF3361B7E12B000EC0C12 /* Main.storyboard */; };
 		ABBEF33A1B7E12B000EC0C12 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABBEF3391B7E12B000EC0C12 /* Images.xcassets */; };
 		ABBEF33D1B7E12B000EC0C12 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABBEF33B1B7E12B000EC0C12 /* LaunchScreen.xib */; };
 		ABBEF3491B7E12B000EC0C12 /* PizzaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBEF3481B7E12B000EC0C12 /* PizzaTests.m */; };
+		ABBEF3541B7E13B900EC0C12 /* PizzaDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBEF3531B7E13B900EC0C12 /* PizzaDetailsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,14 +35,16 @@
 		ABBEF32D1B7E12B000EC0C12 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		ABBEF32E1B7E12B000EC0C12 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		ABBEF3311B7E12B000EC0C12 /* Pizza.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pizza.xcdatamodel; sourceTree = "<group>"; };
-		ABBEF3331B7E12B000EC0C12 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		ABBEF3341B7E12B000EC0C12 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		ABBEF3331B7E12B000EC0C12 /* ListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
+		ABBEF3341B7E12B000EC0C12 /* ListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
 		ABBEF3371B7E12B000EC0C12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ABBEF3391B7E12B000EC0C12 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		ABBEF33C1B7E12B000EC0C12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		ABBEF3421B7E12B000EC0C12 /* PizzaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PizzaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABBEF3471B7E12B000EC0C12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ABBEF3481B7E12B000EC0C12 /* PizzaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PizzaTests.m; sourceTree = "<group>"; };
+		ABBEF3521B7E13B900EC0C12 /* PizzaDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PizzaDetailsViewController.h; sourceTree = "<group>"; };
+		ABBEF3531B7E13B900EC0C12 /* PizzaDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PizzaDetailsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,13 +88,15 @@
 			children = (
 				ABBEF32D1B7E12B000EC0C12 /* AppDelegate.h */,
 				ABBEF32E1B7E12B000EC0C12 /* AppDelegate.m */,
-				ABBEF3331B7E12B000EC0C12 /* ViewController.h */,
-				ABBEF3341B7E12B000EC0C12 /* ViewController.m */,
+				ABBEF3331B7E12B000EC0C12 /* ListViewController.h */,
+				ABBEF3341B7E12B000EC0C12 /* ListViewController.m */,
 				ABBEF3361B7E12B000EC0C12 /* Main.storyboard */,
 				ABBEF3391B7E12B000EC0C12 /* Images.xcassets */,
 				ABBEF33B1B7E12B000EC0C12 /* LaunchScreen.xib */,
 				ABBEF3301B7E12B000EC0C12 /* Pizza.xcdatamodeld */,
 				ABBEF3291B7E12B000EC0C12 /* Supporting Files */,
+				ABBEF3521B7E13B900EC0C12 /* PizzaDetailsViewController.h */,
+				ABBEF3531B7E13B900EC0C12 /* PizzaDetailsViewController.m */,
 			);
 			path = Pizza;
 			sourceTree = "<group>";
@@ -224,7 +229,8 @@
 			files = (
 				ABBEF32F1B7E12B000EC0C12 /* AppDelegate.m in Sources */,
 				ABBEF32C1B7E12B000EC0C12 /* main.m in Sources */,
-				ABBEF3351B7E12B000EC0C12 /* ViewController.m in Sources */,
+				ABBEF3541B7E13B900EC0C12 /* PizzaDetailsViewController.m in Sources */,
+				ABBEF3351B7E12B000EC0C12 /* ListViewController.m in Sources */,
 				ABBEF3321B7E12B000EC0C12 /* Pizza.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -422,6 +428,7 @@
 				ABBEF34E1B7E12B000EC0C12 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ABBEF34F1B7E12B000EC0C12 /* Build configuration list for PBXNativeTarget "PizzaTests" */ = {
 			isa = XCConfigurationList;
@@ -430,6 +437,7 @@
 				ABBEF3511B7E12B000EC0C12 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
