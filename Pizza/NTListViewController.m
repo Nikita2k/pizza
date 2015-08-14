@@ -202,7 +202,7 @@ typedef void (^LocationUpdatedBlock)(CLLocation *newLocation);
                 // TODO: check if I can fetch with it on background
                 // can use self without strongify here, because if self is deallocated
                 // that means I don't need dispalying anymore, rest of commands can be ommited
-                weakSelf.venues = [Venue MR_findAllSortedBy:@"name" ascending:YES inContext:[NSManagedObjectContext MR_defaultContext]];
+                weakSelf.venues = [Venue MR_findAllSortedBy:@"name" ascending:YES];
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
                     
