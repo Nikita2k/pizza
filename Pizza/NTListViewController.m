@@ -7,6 +7,7 @@
 //
 
 #import <MagicalRecord/MagicalRecord.h>
+#import <CoreLocation/CoreLocation.h>
 #import "NTListViewController.h"
 #import "NTPizzaCell.h"
 #import "NTPizzaDetailsViewController.h"
@@ -18,10 +19,11 @@
 static NSString *const kPizzaPlaceCellIdentifier = @"kPizzaPlaceCellIdentifier";
 static NSString *const kShowDetailsSegue = @"showPizzaDetail";
 
-@interface NTListViewController () < UITableViewDataSource, UITableViewDelegate >
+@interface NTListViewController () < UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate >
 
 @property (weak, nonatomic) IBOutlet UITableView *placesTableView;
 @property (strong, nonatomic) NSArray *venues;
+@property (strong, nonatomic) CLLocationManager *locationManager;
 
 @end
 
@@ -34,6 +36,8 @@ static NSString *const kShowDetailsSegue = @"showPizzaDetail";
     // CMT: showing last request data. May be good to move to bg queue and fetch there
     // also can show empty list
     self.venues = [Venue MR_findAllSortedBy:@"name" ascending:YES];
+    
+    [self registerLocationManager];
     [self registerTableViewCells];
     [self addRefreshButton];
 
@@ -91,6 +95,16 @@ static NSString *const kShowDetailsSegue = @"showPizzaDetail";
     
 }
 
+#pragma mark - CLLocationManagerDelegate
+
+- (void)locationManager:(CLLocationManager *)manager
+    didUpdateToLocation:(CLLocation *)newLocation
+           fromLocation:(CLLocation *)oldLocation {
+    
+    [manager stopUpdatingLocation];
+    
+}
+
 #pragma mark - Helpers
 
 - (void)registerTableViewCells {
@@ -114,6 +128,42 @@ static NSString *const kShowDetailsSegue = @"showPizzaDetail";
     }];
     
     self.navigationItem.rightBarButtonItem = item;
+    
+}
+
+- (void)registerLocationManager {
+    
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.delegate = self;
+    self.locationManager.distanceFilter = kCLDistanceFilterNone;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    
+    // TODO: think about statuses, check ios8-, do something when disabled
+    CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
+    
+    if (status == kCLAuthorizationStatusDenied || status == kCLAuthorizationStatusRestricted) {
+        
+        NSString *title = @"Location services are off";
+        NSString *message = @"Enable IT!";
+        
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title
+                                                            message:message
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"Cancel"
+                                                  otherButtonTitles:nil];
+        [alertView show];
+        
+    } else if (status == kCLAuthorizationStatusNotDetermined){
+     
+        if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0) {
+
+            [self.locationManager requestWhenInUseAuthorization];
+            
+        }
+        
+    }
+    
+    [self.locationManager startUpdatingLocation];
     
 }
 
