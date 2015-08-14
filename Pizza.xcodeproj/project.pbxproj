@@ -19,6 +19,7 @@
 		ABBEF3541B7E13B900EC0C12 /* NTPizzaDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBEF3531B7E13B900EC0C12 /* NTPizzaDetailsViewController.m */; };
 		ABBEF3591B7E151700EC0C12 /* NTPizzaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBEF3571B7E151700EC0C12 /* NTPizzaCell.m */; };
 		ABBEF35A1B7E151700EC0C12 /* NTPizzaCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABBEF3581B7E151700EC0C12 /* NTPizzaCell.xib */; };
+		ABCD49B71B7E19F5003527B5 /* NTPizzaListModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ABCD49B51B7E19F5003527B5 /* NTPizzaListModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		ABBEF3561B7E151700EC0C12 /* NTPizzaCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTPizzaCell.h; sourceTree = "<group>"; };
 		ABBEF3571B7E151700EC0C12 /* NTPizzaCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTPizzaCell.m; sourceTree = "<group>"; };
 		ABBEF3581B7E151700EC0C12 /* NTPizzaCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NTPizzaCell.xib; sourceTree = "<group>"; };
+		ABCD49B61B7E19F5003527B5 /* NTPizzaListModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NTPizzaListModel.xcdatamodel; sourceTree = "<group>"; };
 		CF6D7B2DF5DAE7D02F32305B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E9DE28DB945DEF25EAB0166D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F7B93D330CC5C32AD9D4AFC2 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,6 +109,7 @@
 		ABBEF3281B7E12B000EC0C12 /* Pizza */ = {
 			isa = PBXGroup;
 			children = (
+				ABCD49B41B7E1932003527B5 /* Model */,
 				ABBEF3551B7E147500EC0C12 /* PizzaCell */,
 				ABBEF32D1B7E12B000EC0C12 /* AppDelegate.h */,
 				ABBEF32E1B7E12B000EC0C12 /* AppDelegate.m */,
@@ -157,6 +160,14 @@
 				ABBEF3581B7E151700EC0C12 /* NTPizzaCell.xib */,
 			);
 			name = PizzaCell;
+			sourceTree = "<group>";
+		};
+		ABCD49B41B7E1932003527B5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ABCD49B51B7E19F5003527B5 /* NTPizzaListModel.xcdatamodeld */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		D612423BC7F00909DDFE53B9 /* Frameworks */ = {
@@ -305,6 +316,7 @@
 			files = (
 				ABBEF32F1B7E12B000EC0C12 /* AppDelegate.m in Sources */,
 				ABBEF32C1B7E12B000EC0C12 /* main.m in Sources */,
+				ABCD49B71B7E19F5003527B5 /* NTPizzaListModel.xcdatamodeld in Sources */,
 				ABBEF3591B7E151700EC0C12 /* NTPizzaCell.m in Sources */,
 				ABBEF3541B7E13B900EC0C12 /* NTPizzaDetailsViewController.m in Sources */,
 				ABBEF3351B7E12B000EC0C12 /* NTListViewController.m in Sources */,
@@ -528,6 +540,16 @@
 			);
 			currentVersion = ABBEF3311B7E12B000EC0C12 /* Pizza.xcdatamodel */;
 			path = Pizza.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		ABCD49B51B7E19F5003527B5 /* NTPizzaListModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				ABCD49B61B7E19F5003527B5 /* NTPizzaListModel.xcdatamodel */,
+			);
+			currentVersion = ABCD49B61B7E19F5003527B5 /* NTPizzaListModel.xcdatamodel */;
+			path = NTPizzaListModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
