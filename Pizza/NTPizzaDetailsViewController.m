@@ -8,6 +8,20 @@
 
 #import "NTPizzaDetailsViewController.h"
 
+@interface NTPizzaDetailsViewController ()
+
+@property (weak, nonatomic) IBOutlet UILabel *venueTitle;
+
+@end
+
 @implementation NTPizzaDetailsViewController
+
+- (void)viewDidLoad {
+    
+    [super viewDidLoad];
+    
+    self.venueTitle.text = self.venue.name;
+    
+}
 
 @end

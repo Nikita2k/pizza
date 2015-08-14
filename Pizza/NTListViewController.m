@@ -68,8 +68,8 @@ static NSString *const kShowDetailsSegue = @"showPizzaDetail";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    // TODO: find object & send it
-    [self performSegueWithIdentifier:kShowDetailsSegue sender:self];
+    Venue *venue = [self.venues objectAtIndex:indexPath.row];
+    [self performSegueWithIdentifier:kShowDetailsSegue sender:venue];
     
 }
 
@@ -82,8 +82,10 @@ static NSString *const kShowDetailsSegue = @"showPizzaDetail";
         NSAssert([segue.destinationViewController isKindOfClass:[NTPizzaDetailsViewController class]],
                  @"showPizzaDetail should have NTPizzaDetailsViewController as a destination");
         
+        NSAssert([sender isKindOfClass:[Venue class]], @"NTPizzaDetailsViewController should accept Venue only");
+        
         NTPizzaDetailsViewController *detailsController = segue.destinationViewController;
-        detailsController.modelObject = sender;
+        detailsController.venue = (Venue *)sender;
         
     }
     

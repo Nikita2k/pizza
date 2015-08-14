@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Venue.h"
 
 @interface NTPizzaDetailsViewController : UIViewController
 
-// TOOD: Replace with real model
-@property (nonatomic, strong) NSString *modelObject;
+@property (nonatomic, strong) Venue *venue;
 
 @end
