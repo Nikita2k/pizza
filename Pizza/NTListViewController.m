@@ -15,6 +15,7 @@
 #import "Venue.h"
 #import "Location.h"
 #import "NTBarButtonItem.h"
+#import "UIBarButtonItem+NTActivityViewButton.h"
 
 static NSString *const kPizzaPlaceCellIdentifier = @"kPizzaPlaceCellIdentifier";
 static NSString *const kShowDetailsSegue = @"showPizzaDetail";
@@ -27,6 +28,7 @@ typedef void (^LocationUpdatedBlock)(CLLocation *newLocation);
 @property (strong, nonatomic) NSArray *venues;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (copy, nonatomic) LocationUpdatedBlock locationUpdatedBlock;
+@property (strong, nonatomic) UIBarButtonItem *requestDataButton;
 
 @end
 
@@ -75,7 +77,11 @@ typedef void (^LocationUpdatedBlock)(CLLocation *newLocation);
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    NSAssert(tableView == self.placesTableView, @"NTListViewController works only with placesTableView");
+    
     Venue *venue = [self.venues objectAtIndex:indexPath.row];
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
     [self performSegueWithIdentifier:kShowDetailsSegue sender:venue];
     
 }
@@ -128,13 +134,13 @@ typedef void (^LocationUpdatedBlock)(CLLocation *newLocation);
 - (void)addRefreshButton {
     
     __weak __typeof(self) weakSelf = self;
-    NTBarButtonItem *item = [[NTBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh action:^(UIBarButtonItem *sender) {
+    self.requestDataButton = [[NTBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh action:^(UIBarButtonItem *sender) {
         
         [weakSelf refreshButtonClicked];
         
     }];
     
-    self.navigationItem.rightBarButtonItem = item;
+    self.navigationItem.rightBarButtonItem = self.requestDataButton;
     
 }
 
@@ -185,6 +191,7 @@ typedef void (^LocationUpdatedBlock)(CLLocation *newLocation);
         };
         
         [self.locationManager startUpdatingLocation];
+        self.navigationItem.rightBarButtonItem = [UIBarButtonItem nt_activityViewButton];
         
     }
     
@@ -218,9 +225,16 @@ typedef void (^LocationUpdatedBlock)(CLLocation *newLocation);
             
         }
         
-        weakSelf.locationUpdatedBlock = nil;
+        [weakSelf onRequestFinished];
         
     }];
+    
+}
+
+- (void)onRequestFinished {
+ 
+    self.locationUpdatedBlock = nil;
+    self.navigationItem.rightBarButtonItem = self.requestDataButton;
     
 }
 

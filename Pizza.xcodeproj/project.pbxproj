@@ -40,6 +40,7 @@
 		ABCD49D11B7E1B91003527B5 /* Venue.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCD49CC1B7E1B91003527B5 /* Venue.m */; };
 		ABCD49D51B7E1C3A003527B5 /* NTFourSquareApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCD49D41B7E1C3A003527B5 /* NTFourSquareApiClient.m */; };
 		ABCD49D91B7E29A1003527B5 /* NTBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCD49D81B7E29A1003527B5 /* NTBarButtonItem.m */; };
+		ABCD49DD1B7E4008003527B5 /* UIBarButtonItem+NTActivityViewButton.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCD49DC1B7E4008003527B5 /* UIBarButtonItem+NTActivityViewButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,8 @@
 		ABCD49D41B7E1C3A003527B5 /* NTFourSquareApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTFourSquareApiClient.m; sourceTree = "<group>"; };
 		ABCD49D71B7E29A1003527B5 /* NTBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTBarButtonItem.h; sourceTree = "<group>"; };
 		ABCD49D81B7E29A1003527B5 /* NTBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTBarButtonItem.m; sourceTree = "<group>"; };
+		ABCD49DB1B7E4008003527B5 /* UIBarButtonItem+NTActivityViewButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+NTActivityViewButton.h"; sourceTree = "<group>"; };
+		ABCD49DC1B7E4008003527B5 /* UIBarButtonItem+NTActivityViewButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+NTActivityViewButton.m"; sourceTree = "<group>"; };
 		CF6D7B2DF5DAE7D02F32305B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E9DE28DB945DEF25EAB0166D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F7B93D330CC5C32AD9D4AFC2 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,6 +145,7 @@
 		ABBEF3281B7E12B000EC0C12 /* Pizza */ = {
 			isa = PBXGroup;
 			children = (
+				ABCD49DA1B7E3FE1003527B5 /* Categories */,
 				ABCD49D61B7E2981003527B5 /* Custom UI */,
 				ABCD49D21B7E1BBB003527B5 /* API */,
 				ABCD49C21B7E1B91003527B5 /* Models */,
@@ -255,6 +259,15 @@
 				ABCD49D81B7E29A1003527B5 /* NTBarButtonItem.m */,
 			);
 			name = "Custom UI";
+			sourceTree = "<group>";
+		};
+		ABCD49DA1B7E3FE1003527B5 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				ABCD49DB1B7E4008003527B5 /* UIBarButtonItem+NTActivityViewButton.h */,
+				ABCD49DC1B7E4008003527B5 /* UIBarButtonItem+NTActivityViewButton.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 		D612423BC7F00909DDFE53B9 /* Frameworks */ = {
@@ -420,6 +433,7 @@
 			files = (
 				ABCD49D11B7E1B91003527B5 /* Venue.m in Sources */,
 				ABBEF32F1B7E12B000EC0C12 /* AppDelegate.m in Sources */,
+				ABCD49DD1B7E4008003527B5 /* UIBarButtonItem+NTActivityViewButton.m in Sources */,
 				ABBEF32C1B7E12B000EC0C12 /* main.m in Sources */,
 				ABCD49B71B7E19F5003527B5 /* NTPizzaListModel.xcdatamodeld in Sources */,
 				ABBEF3591B7E151700EC0C12 /* NTPizzaCell.m in Sources */,

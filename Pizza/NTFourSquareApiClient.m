@@ -57,7 +57,8 @@ static NSString *const kBaseURL = @"https://api.foursquare.com/v2/";
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
     
     parameters[@"ll"] = [NSString stringWithFormat:@"%.22f, %.2f", location.coordinate.latitude, location.coordinate.longitude];
-    parameters[@"limit"] = @10;
+    parameters[@"limit"] = @5;
+    parameters[@"radius"] = @800;
     parameters[@"v"] = @"20140806";
     parameters[@"client_id"] = kFourSquareClientId;
     parameters[@"client_secret"] = kFourSquareClientSecret;
