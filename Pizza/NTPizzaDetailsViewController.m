@@ -7,10 +7,13 @@
 //
 
 #import "NTPizzaDetailsViewController.h"
+#import "ModelIncludes.h"
+
 
 @interface NTPizzaDetailsViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *venueTitle;
+@property (weak, nonatomic) IBOutlet UILabel *additionalInfo;
 
 @end
 
@@ -21,6 +24,7 @@
     [super viewDidLoad];
     
     self.venueTitle.text = self.venue.name;
+    self.additionalInfo.text = [NSString stringWithFormat:@"in %d meters, has %d checkins. ", self.venue.location.distanceValue, self.venue.checkinsValue];
     
 }
 

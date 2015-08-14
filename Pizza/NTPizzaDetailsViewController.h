@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Venue.h"
+
+@class Venue;
 
 @interface NTPizzaDetailsViewController : UIViewController
 

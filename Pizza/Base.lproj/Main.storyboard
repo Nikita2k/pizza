@@ -55,20 +55,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PQx-0f-pXE">
-                                <rect key="frame" x="272" y="80" width="58" height="29"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PQx-0f-pXE">
+                                <rect key="frame" x="271" y="80" width="58" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T1e-PK-7b7">
+                                <rect key="frame" x="279" y="167" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="T1e-PK-7b7" firstAttribute="top" secondItem="pOG-HE-qql" secondAttribute="bottom" constant="103" id="83X-40-gGY"/>
                             <constraint firstAttribute="centerX" secondItem="PQx-0f-pXE" secondAttribute="centerX" id="Dtu-kJ-1b3"/>
+                            <constraint firstAttribute="centerX" secondItem="T1e-PK-7b7" secondAttribute="centerX" id="ZbG-LN-l0M"/>
                             <constraint firstItem="PQx-0f-pXE" firstAttribute="top" secondItem="pOG-HE-qql" secondAttribute="bottom" constant="16" id="g8j-2W-7Vu"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="additionalInfo" destination="T1e-PK-7b7" id="b7p-jT-yE2"/>
                         <outlet property="venueTitle" destination="PQx-0f-pXE" id="rqe-Pq-1gZ"/>
                     </connections>
                 </viewController>

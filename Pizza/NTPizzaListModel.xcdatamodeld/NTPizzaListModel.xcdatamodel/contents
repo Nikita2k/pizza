@@ -5,6 +5,11 @@
         <relationship name="venue" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Venue" inverseName="location" inverseEntity="Venue" syncable="YES"/>
     </entity>
     <entity name="Venue" representedClassName="Venue" syncable="YES">
+        <attribute name="checkins" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="stats.checkinsCount"/>
+            </userInfo>
+        </attribute>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="venueID" optional="YES" attributeType="String" syncable="YES">
             <userInfo>
@@ -19,6 +24,6 @@
     </entity>
     <elements>
         <element name="Location" positionX="-63" positionY="-18" width="128" height="75"/>
-        <element name="Venue" positionX="-54" positionY="0" width="128" height="90"/>
+        <element name="Venue" positionX="-54" positionY="0" width="128" height="105"/>
     </elements>
 </model>
