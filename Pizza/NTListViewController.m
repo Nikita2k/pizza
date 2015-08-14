@@ -19,12 +19,14 @@
 static NSString *const kPizzaPlaceCellIdentifier = @"kPizzaPlaceCellIdentifier";
 static NSString *const kShowDetailsSegue = @"showPizzaDetail";
 
+typedef void (^LocationUpdatedBlock)(CLLocation *newLocation);
+
 @interface NTListViewController () < UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate >
 
 @property (weak, nonatomic) IBOutlet UITableView *placesTableView;
 @property (strong, nonatomic) NSArray *venues;
 @property (strong, nonatomic) CLLocationManager *locationManager;
-@property (strong, nonatomic) CLLocation *latestLocation;
+@property (copy, nonatomic) LocationUpdatedBlock locationUpdatedBlock;
 
 @end
 
@@ -103,8 +105,10 @@ static NSString *const kShowDetailsSegue = @"showPizzaDetail";
            fromLocation:(CLLocation *)oldLocation {
     
     [manager stopUpdatingLocation];
-    self.latestLocation = newLocation;
-    NSLog(@"new location received!");
+
+    if (self.locationUpdatedBlock) {
+        self.locationUpdatedBlock(newLocation);
+    }
     
 }
 
@@ -126,9 +130,8 @@ static NSString *const kShowDetailsSegue = @"showPizzaDetail";
     __weak __typeof(self) weakSelf = self;
     NTBarButtonItem *item = [[NTBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh action:^(UIBarButtonItem *sender) {
         
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [weakSelf fetchDataFromServer];
-        });
+        [weakSelf refreshButtonClicked];
+        
     }];
     
     self.navigationItem.rightBarButtonItem = item;
@@ -167,14 +170,30 @@ static NSString *const kShowDetailsSegue = @"showPizzaDetail";
         
     }
     
-    [self.locationManager startUpdatingLocation];
+}
+
+- (void)refreshButtonClicked {
+    
+    __weak typeof(self) weakSelf = self;
+    
+    if (self.locationUpdatedBlock == nil) {
+        
+        self.locationUpdatedBlock = ^(CLLocation *loc) {
+            
+            [weakSelf fetchDataFromServerAtLocation:loc];
+            
+        };
+        
+        [self.locationManager startUpdatingLocation];
+        
+    }
     
 }
 
-- (void)fetchDataFromServer {
+- (void)fetchDataFromServerAtLocation:(CLLocation *)location {
     
     __weak __typeof(self) weakSelf = self;
-    [[NTFourSquareApiClient sharedInstance] updateVenuesNearLocation:self.latestLocation withCompletionBlock:^(NSError *error) {
+    [[NTFourSquareApiClient sharedInstance] updateVenuesNearLocation:location withCompletionBlock:^(NSError *error) {
         
         if (error == nil) {
             
@@ -183,7 +202,7 @@ static NSString *const kShowDetailsSegue = @"showPizzaDetail";
                 // TODO: check if I can fetch with it on background
                 // can use self without strongify here, because if self is deallocated
                 // that means I don't need dispalying anymore, rest of commands can be ommited
-                weakSelf.venues = [Venue MR_findAllSortedBy:@"name" ascending:YES];
+                weakSelf.venues = [Venue MR_findAllSortedBy:@"name" ascending:YES inContext:[NSManagedObjectContext MR_defaultContext]];
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
                     
@@ -198,6 +217,8 @@ static NSString *const kShowDetailsSegue = @"showPizzaDetail";
             [[[UIAlertView alloc] initWithTitle:@"Error" message:@"Something went wrong" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
             
         }
+        
+        weakSelf.locationUpdatedBlock = nil;
         
     }];
     

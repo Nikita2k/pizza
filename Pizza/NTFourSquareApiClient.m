@@ -68,9 +68,9 @@ static NSString *const kBaseURL = @"https://api.foursquare.com/v2/";
     [self GET:@"venues/search" parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
         
         NSLog(@"Deleting entries...");
-        // CMT: maybe we should move to BG thread to delete all data
-        [Venue MR_truncateAll];
         [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
+        
+            [Venue MR_truncateAllInContext:localContext];
             
             NSArray *venues = [[responseObject objectForKey:@"response"] objectForKey:@"venues"];
             [Venue MR_importFromArray:venues inContext:localContext];
