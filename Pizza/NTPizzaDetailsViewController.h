@@ -10,4 +10,7 @@
 
 @interface NTPizzaDetailsViewController : UIViewController
 
+// TOOD: Replace with real model
+@property (nonatomic, strong) NSString *modelObject;
+
 @end
