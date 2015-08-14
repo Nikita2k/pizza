@@ -59,6 +59,8 @@ static NSString *const kBaseURL = @"https://api.foursquare.com/v2/";
     parameters[@"v"] = @"20140806";
     parameters[@"client_id"] = kFourSquareClientId;
     parameters[@"client_secret"] = kFourSquareClientSecret;
+    // CMT: hardcoded pizza. Normally, would fetch this categories from server
+    parameters[@"categoryId"] = @"4bf58dd8d48988d1ca941735";
     
     // CMT: normally I would use cocoalumberjack DDLog
     NSLog(@"Looking at %@", parameters[@"ll"]);

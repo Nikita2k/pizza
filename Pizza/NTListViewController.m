@@ -104,6 +104,7 @@ static NSString *const kShowDetailsSegue = @"showPizzaDetail";
     
     [manager stopUpdatingLocation];
     self.latestLocation = newLocation;
+    NSLog(@"new location received!");
     
 }
 
