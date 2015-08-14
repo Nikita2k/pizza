@@ -8,10 +8,11 @@
 
 #import <AFNetworking/AFHTTPSessionManager.h>
 
+@class CLLocation;
+
 @interface NTFourSquareApiClient : AFHTTPSessionManager
 
 + (instancetype)sharedInstance;
-
-- (void)updateVenuesWithCompletionBlock:(void (^)(NSError *error))completionBlock;
+- (void)updateVenuesNearLocation:(CLLocation *)location withCompletionBlock:(void (^)(NSError *error))completionBlock;
 
 @end

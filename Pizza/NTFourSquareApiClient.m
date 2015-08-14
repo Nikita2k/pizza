@@ -7,6 +7,7 @@
 //
 
 #import <MagicalRecord/MagicalRecord.h>
+#import <CoreLocation/CoreLocation.h>
 #import "NTFourSquareApiClient.h"
 #import "Venue.h"
 
@@ -46,20 +47,27 @@ static NSString *const kBaseURL = @"https://api.foursquare.com/v2/";
     
 }
 
-- (void)updateVenuesWithCompletionBlock:(void (^)(NSError *error))completionBlock {
+- (void)updateVenuesNearLocation:(CLLocation *)location withCompletionBlock:(void (^)(NSError *error))completionBlock {
     
     NSParameterAssert(completionBlock);
+    NSParameterAssert(location);
     
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
     
-    parameters[@"ll"] = @"48.858,2.2944";
+    parameters[@"ll"] = [NSString stringWithFormat:@"%.22f, %.2f", location.coordinate.latitude, location.coordinate.longitude];
     parameters[@"limit"] = @10;
     parameters[@"v"] = @"20140806";
     parameters[@"client_id"] = kFourSquareClientId;
     parameters[@"client_secret"] = kFourSquareClientSecret;
     
+    // CMT: normally I would use cocoalumberjack DDLog
+    NSLog(@"Looking at %@", parameters[@"ll"]);
+    
     [self GET:@"venues/search" parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
         
+        NSLog(@"Deleting entries...");
+        // CMT: maybe we should move to BG thread to delete all data
+        [Venue MR_truncateAll];
         [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
             
             NSArray *venues = [[responseObject objectForKey:@"response"] objectForKey:@"venues"];

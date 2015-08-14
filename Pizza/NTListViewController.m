@@ -24,6 +24,7 @@ static NSString *const kShowDetailsSegue = @"showPizzaDetail";
 @property (weak, nonatomic) IBOutlet UITableView *placesTableView;
 @property (strong, nonatomic) NSArray *venues;
 @property (strong, nonatomic) CLLocationManager *locationManager;
+@property (strong, nonatomic) CLLocation *latestLocation;
 
 @end
 
@@ -102,6 +103,7 @@ static NSString *const kShowDetailsSegue = @"showPizzaDetail";
            fromLocation:(CLLocation *)oldLocation {
     
     [manager stopUpdatingLocation];
+    self.latestLocation = newLocation;
     
 }
 
@@ -123,8 +125,9 @@ static NSString *const kShowDetailsSegue = @"showPizzaDetail";
     __weak __typeof(self) weakSelf = self;
     NTBarButtonItem *item = [[NTBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh action:^(UIBarButtonItem *sender) {
         
-        [weakSelf fetchDataFromServer];
-        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [weakSelf fetchDataFromServer];
+        });
     }];
     
     self.navigationItem.rightBarButtonItem = item;
@@ -170,7 +173,7 @@ static NSString *const kShowDetailsSegue = @"showPizzaDetail";
 - (void)fetchDataFromServer {
     
     __weak __typeof(self) weakSelf = self;
-    [[NTFourSquareApiClient sharedInstance] updateVenuesWithCompletionBlock:^(NSError *error) {
+    [[NTFourSquareApiClient sharedInstance] updateVenuesNearLocation:self.latestLocation withCompletionBlock:^(NSError *error) {
         
         if (error == nil) {
             
