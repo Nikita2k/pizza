@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		ABCD49BD1B7E1B0C003527B5 /* Mogenerator */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = ABCD49BE1B7E1B0C003527B5 /* Build configuration list for PBXAggregateTarget "Mogenerator" */;
+			buildPhases = (
+				ABCD49C11B7E1B12003527B5 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = Mogenerator;
+			productName = Mogenerator;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		A10D01BF28879FB9BF1497A7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F7B93D330CC5C32AD9D4AFC2 /* libPods.a */; };
 		ABBEF32C1B7E12B000EC0C12 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBEF32B1B7E12B000EC0C12 /* main.m */; };
@@ -20,6 +34,10 @@
 		ABBEF3591B7E151700EC0C12 /* NTPizzaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBEF3571B7E151700EC0C12 /* NTPizzaCell.m */; };
 		ABBEF35A1B7E151700EC0C12 /* NTPizzaCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABBEF3581B7E151700EC0C12 /* NTPizzaCell.xib */; };
 		ABCD49B71B7E19F5003527B5 /* NTPizzaListModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ABCD49B51B7E19F5003527B5 /* NTPizzaListModel.xcdatamodeld */; };
+		ABCD49CE1B7E1B91003527B5 /* _Location.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCD49C61B7E1B91003527B5 /* _Location.m */; };
+		ABCD49CF1B7E1B91003527B5 /* _Venue.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCD49C81B7E1B91003527B5 /* _Venue.m */; };
+		ABCD49D01B7E1B91003527B5 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCD49CA1B7E1B91003527B5 /* Location.m */; };
+		ABCD49D11B7E1B91003527B5 /* Venue.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCD49CC1B7E1B91003527B5 /* Venue.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +71,15 @@
 		ABBEF3571B7E151700EC0C12 /* NTPizzaCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTPizzaCell.m; sourceTree = "<group>"; };
 		ABBEF3581B7E151700EC0C12 /* NTPizzaCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NTPizzaCell.xib; sourceTree = "<group>"; };
 		ABCD49B61B7E19F5003527B5 /* NTPizzaListModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NTPizzaListModel.xcdatamodel; sourceTree = "<group>"; };
+		ABCD49C51B7E1B91003527B5 /* _Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Location.h; sourceTree = "<group>"; };
+		ABCD49C61B7E1B91003527B5 /* _Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Location.m; sourceTree = "<group>"; };
+		ABCD49C71B7E1B91003527B5 /* _Venue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Venue.h; sourceTree = "<group>"; };
+		ABCD49C81B7E1B91003527B5 /* _Venue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Venue.m; sourceTree = "<group>"; };
+		ABCD49C91B7E1B91003527B5 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		ABCD49CA1B7E1B91003527B5 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
+		ABCD49CB1B7E1B91003527B5 /* Venue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Venue.h; sourceTree = "<group>"; };
+		ABCD49CC1B7E1B91003527B5 /* Venue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Venue.m; sourceTree = "<group>"; };
+		ABCD49CD1B7E1B91003527B5 /* ModelIncludes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelIncludes.h; sourceTree = "<group>"; };
 		CF6D7B2DF5DAE7D02F32305B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E9DE28DB945DEF25EAB0166D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F7B93D330CC5C32AD9D4AFC2 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,7 +136,7 @@
 		ABBEF3281B7E12B000EC0C12 /* Pizza */ = {
 			isa = PBXGroup;
 			children = (
-				ABCD49B41B7E1932003527B5 /* Model */,
+				ABCD49C21B7E1B91003527B5 /* Models */,
 				ABBEF3551B7E147500EC0C12 /* PizzaCell */,
 				ABBEF32D1B7E12B000EC0C12 /* AppDelegate.h */,
 				ABBEF32E1B7E12B000EC0C12 /* AppDelegate.m */,
@@ -162,12 +189,46 @@
 			name = PizzaCell;
 			sourceTree = "<group>";
 		};
-		ABCD49B41B7E1932003527B5 /* Model */ = {
+		ABCD49B41B7E1932003527B5 /* Core data model */ = {
 			isa = PBXGroup;
 			children = (
 				ABCD49B51B7E19F5003527B5 /* NTPizzaListModel.xcdatamodeld */,
 			);
-			name = Model;
+			name = "Core data model";
+			path = ..;
+			sourceTree = "<group>";
+		};
+		ABCD49C21B7E1B91003527B5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				ABCD49B41B7E1932003527B5 /* Core data model */,
+				ABCD49C31B7E1B91003527B5 /* Entities */,
+				ABCD49CD1B7E1B91003527B5 /* ModelIncludes.h */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		ABCD49C31B7E1B91003527B5 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				ABCD49C41B7E1B91003527B5 /* EntitiesMachine */,
+				ABCD49C91B7E1B91003527B5 /* Location.h */,
+				ABCD49CA1B7E1B91003527B5 /* Location.m */,
+				ABCD49CB1B7E1B91003527B5 /* Venue.h */,
+				ABCD49CC1B7E1B91003527B5 /* Venue.m */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		ABCD49C41B7E1B91003527B5 /* EntitiesMachine */ = {
+			isa = PBXGroup;
+			children = (
+				ABCD49C51B7E1B91003527B5 /* _Location.h */,
+				ABCD49C61B7E1B91003527B5 /* _Location.m */,
+				ABCD49C71B7E1B91003527B5 /* _Venue.h */,
+				ABCD49C81B7E1B91003527B5 /* _Venue.m */,
+			);
+			path = EntitiesMachine;
 			sourceTree = "<group>";
 		};
 		D612423BC7F00909DDFE53B9 /* Frameworks */ = {
@@ -234,6 +295,9 @@
 						CreatedOnToolsVersion = 6.3.2;
 						TestTargetID = ABBEF3251B7E12B000EC0C12;
 					};
+					ABCD49BD1B7E1B0C003527B5 = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
 				};
 			};
 			buildConfigurationList = ABBEF3211B7E12B000EC0C12 /* Build configuration list for PBXProject "Pizza" */;
@@ -251,6 +315,7 @@
 			targets = (
 				ABBEF3251B7E12B000EC0C12 /* Pizza */,
 				ABBEF3411B7E12B000EC0C12 /* PizzaTests */,
+				ABCD49BD1B7E1B0C003527B5 /* Mogenerator */,
 			);
 		};
 /* End PBXProject section */
@@ -292,6 +357,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		ABCD49C11B7E1B12003527B5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=/usr/local/bin/:${PATH}\nHUMAN_DIR=\"${PROJECT_DIR}/Pizza/Models/Entities\"\nMACHINE_DIR=\"${PROJECT_DIR}/Pizza/Models/Entities/EntitiesMachine\"\nINCLUDE_H=\"${PROJECT_DIR}/Pizza/Models/ModelIncludes.h\"\n\nmogenerator --model \"${PROJECT_DIR}/Pizza/NTPizzaListModel.xcdatamodeld\" --machine-dir \"$MACHINE_DIR/\" --human-dir \"$HUMAN_DIR/\" --includeh \"$INCLUDE_H\" --template-var arc=true";
+		};
 		B15C4CC841541F9ADAFBB1C7 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -314,12 +392,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABCD49D11B7E1B91003527B5 /* Venue.m in Sources */,
 				ABBEF32F1B7E12B000EC0C12 /* AppDelegate.m in Sources */,
 				ABBEF32C1B7E12B000EC0C12 /* main.m in Sources */,
 				ABCD49B71B7E19F5003527B5 /* NTPizzaListModel.xcdatamodeld in Sources */,
 				ABBEF3591B7E151700EC0C12 /* NTPizzaCell.m in Sources */,
 				ABBEF3541B7E13B900EC0C12 /* NTPizzaDetailsViewController.m in Sources */,
+				ABCD49CF1B7E1B91003527B5 /* _Venue.m in Sources */,
+				ABCD49D01B7E1B91003527B5 /* Location.m in Sources */,
 				ABBEF3351B7E12B000EC0C12 /* NTListViewController.m in Sources */,
+				ABCD49CE1B7E1B91003527B5 /* _Location.m in Sources */,
 				ABBEF3321B7E12B000EC0C12 /* Pizza.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -500,6 +582,20 @@
 			};
 			name = Release;
 		};
+		ABCD49BF1B7E1B0C003527B5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		ABCD49C01B7E1B0C003527B5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -529,6 +625,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		ABCD49BE1B7E1B0C003527B5 /* Build configuration list for PBXAggregateTarget "Mogenerator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABCD49BF1B7E1B0C003527B5 /* Debug */,
+				ABCD49C01B7E1B0C003527B5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 
