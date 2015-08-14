@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A10D01BF28879FB9BF1497A7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F7B93D330CC5C32AD9D4AFC2 /* libPods.a */; };
 		ABBEF32C1B7E12B000EC0C12 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBEF32B1B7E12B000EC0C12 /* main.m */; };
 		ABBEF32F1B7E12B000EC0C12 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBEF32E1B7E12B000EC0C12 /* AppDelegate.m */; };
 		ABBEF3321B7E12B000EC0C12 /* Pizza.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ABBEF3301B7E12B000EC0C12 /* Pizza.xcdatamodeld */; };
@@ -50,6 +51,9 @@
 		ABBEF3561B7E151700EC0C12 /* NTPizzaCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTPizzaCell.h; sourceTree = "<group>"; };
 		ABBEF3571B7E151700EC0C12 /* NTPizzaCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTPizzaCell.m; sourceTree = "<group>"; };
 		ABBEF3581B7E151700EC0C12 /* NTPizzaCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NTPizzaCell.xib; sourceTree = "<group>"; };
+		CF6D7B2DF5DAE7D02F32305B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		E9DE28DB945DEF25EAB0166D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		F7B93D330CC5C32AD9D4AFC2 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A10D01BF28879FB9BF1497A7 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +75,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		34631B70E3D3535E28BF1774 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CF6D7B2DF5DAE7D02F32305B /* Pods.debug.xcconfig */,
+				E9DE28DB945DEF25EAB0166D /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		ABBEF31D1B7E12B000EC0C12 = {
 			isa = PBXGroup;
 			children = (
 				ABBEF3281B7E12B000EC0C12 /* Pizza */,
 				ABBEF3451B7E12B000EC0C12 /* PizzaTests */,
 				ABBEF3271B7E12B000EC0C12 /* Products */,
+				34631B70E3D3535E28BF1774 /* Pods */,
+				D612423BC7F00909DDFE53B9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -143,6 +159,14 @@
 			name = PizzaCell;
 			sourceTree = "<group>";
 		};
+		D612423BC7F00909DDFE53B9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F7B93D330CC5C32AD9D4AFC2 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -150,9 +174,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ABBEF34C1B7E12B000EC0C12 /* Build configuration list for PBXNativeTarget "Pizza" */;
 			buildPhases = (
+				B15C4CC841541F9ADAFBB1C7 /* Check Pods Manifest.lock */,
 				ABBEF3221B7E12B000EC0C12 /* Sources */,
 				ABBEF3231B7E12B000EC0C12 /* Frameworks */,
 				ABBEF3241B7E12B000EC0C12 /* Resources */,
+				550116BD8E2C50F12BC83EDD /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -238,6 +264,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		550116BD8E2C50F12BC83EDD /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B15C4CC841541F9ADAFBB1C7 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		ABBEF3221B7E12B000EC0C12 /* Sources */ = {
@@ -375,6 +434,7 @@
 		};
 		ABBEF34D1B7E12B000EC0C12 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF6D7B2DF5DAE7D02F32305B /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Pizza/Info.plist;
@@ -385,6 +445,7 @@
 		};
 		ABBEF34E1B7E12B000EC0C12 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9DE28DB945DEF25EAB0166D /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Pizza/Info.plist;

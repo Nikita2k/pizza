@@ -1,0 +1,15 @@
+PODS:
+  - AFNetworking (0.10.1)
+  - MagicalRecord (2.2):
+    - MagicalRecord/Core (= 2.2)
+  - MagicalRecord/Core (2.2)
+
+DEPENDENCIES:
+  - AFNetworking
+  - MagicalRecord
+
+SPEC CHECKSUMS:
+  AFNetworking: 560d6b9394bf2f80c1efac9141e0d36739e0ff6d
+  MagicalRecord: f8a56bb87ab6552f20c4bb8681a1958a197ea3cd
+
+COCOAPODS: 0.38.2
