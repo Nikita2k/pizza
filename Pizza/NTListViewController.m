@@ -118,6 +118,21 @@ typedef void (^LocationUpdatedBlock)(CLLocation *newLocation);
     
 }
 
+- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
+    
+    // CMT: need to check status correcty. This one should be for initial launch only
+    if (status != kCLAuthorizationStatusRestricted && status != kCLAuthorizationStatusDenied) {
+        
+        if ([self.venues count] == 0) {
+            
+            [self refreshButtonClicked];
+            
+        }
+        
+    }
+    
+}
+
 #pragma mark - Helpers
 
 - (void)registerTableViewCells {
