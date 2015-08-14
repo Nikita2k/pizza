@@ -11,6 +11,8 @@
 #import "NTFourSquareApiClient.h"
 #import "Venue.h"
 
+NSString *const kNTFourSquareApiDidSaveVenueData = @"kNTFourSquareApiDidSaveVenueData";
+
 static NSString *const kFourSquareClientId = @"OTRCMCKGQOYRP3M2HVTBOJEDSI5DHMKNCLAZVS0IGDMG1XHH";
 static NSString *const kFourSquareClientSecret = @"D5PHWXIDTQMD5M2R1KN2GBAQEWJH00CDQWT0FGNFZAIAJDVX";
 static NSString *const kBaseURL = @"https://api.foursquare.com/v2/";
@@ -79,6 +81,14 @@ static NSString *const kBaseURL = @"https://api.foursquare.com/v2/";
             
             // CMT I can refer here without checking for block, as it is checked in assertion
             // without this I'll check it like if (completionBlock)
+            
+            if (error == nil) {
+                
+                // CMT don't know who should read subscribe to this for now :)
+                [[NSNotificationCenter defaultCenter] postNotificationName:kNTFourSquareApiDidSaveVenueData object:nil];
+                
+            }
+            
             completionBlock(error);
             
         }];

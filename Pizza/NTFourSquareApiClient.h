@@ -8,6 +8,8 @@
 
 #import <AFNetworking/AFHTTPSessionManager.h>
 
+UIKIT_EXTERN NSString *const kNTFourSquareApiDidSaveVenueData;
+
 @class CLLocation;
 
 @interface NTFourSquareApiClient : AFHTTPSessionManager
