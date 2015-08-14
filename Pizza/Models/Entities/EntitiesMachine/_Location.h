@@ -7,6 +7,12 @@ extern const struct LocationAttributes {
 	__unsafe_unretained NSString *distance;
 } LocationAttributes;
 
+extern const struct LocationRelationships {
+	__unsafe_unretained NSString *venue;
+} LocationRelationships;
+
+@class Venue;
+
 @interface LocationID : NSManagedObjectID {}
 @end
 
@@ -24,6 +30,10 @@ extern const struct LocationAttributes {
 
 //- (BOOL)validateDistance:(id*)value_ error:(NSError**)error_;
 
+@property (nonatomic, strong) Venue *venue;
+
+//- (BOOL)validateVenue:(id*)value_ error:(NSError**)error_;
+
 @end
 
 @interface _Location (CoreDataGeneratedPrimitiveAccessors)
@@ -33,5 +43,8 @@ extern const struct LocationAttributes {
 
 - (int32_t)primitiveDistanceValue;
 - (void)setPrimitiveDistanceValue:(int32_t)value_;
+
+- (Venue*)primitiveVenue;
+- (void)setPrimitiveVenue:(Venue*)value;
 
 @end

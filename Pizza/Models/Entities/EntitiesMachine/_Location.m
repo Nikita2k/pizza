@@ -7,6 +7,10 @@ const struct LocationAttributes LocationAttributes = {
 	.distance = @"distance",
 };
 
+const struct LocationRelationships LocationRelationships = {
+	.venue = @"venue",
+};
+
 @implementation LocationID
 @end
 
@@ -61,6 +65,8 @@ const struct LocationAttributes LocationAttributes = {
 - (void)setPrimitiveDistanceValue:(int32_t)value_ {
 	[self setPrimitiveDistance:[NSNumber numberWithInt:value_]];
 }
+
+@dynamic venue;
 
 @end
 

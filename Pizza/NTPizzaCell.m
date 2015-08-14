@@ -7,6 +7,7 @@
 //
 
 #import "NTPizzaCell.h"
+#import "Venue.h"
 
 @interface NTPizzaCell ()
 
@@ -16,14 +17,10 @@
 
 @implementation NTPizzaCell
 
-- (void)awakeFromNib {
-    // Initialization code
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+- (void)configureForVenue:(Venue *)venue {
+    
+    self.nameLabel.text = venue.name;
+    
 }
 
 @end

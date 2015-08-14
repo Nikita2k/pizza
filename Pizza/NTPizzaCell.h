@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class Venue;
+
 @interface NTPizzaCell : UITableViewCell
+
+- (void)configureForVenue:(Venue *)venue;
 
 @end

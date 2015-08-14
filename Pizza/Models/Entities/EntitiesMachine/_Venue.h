@@ -8,6 +8,12 @@ extern const struct VenueAttributes {
 	__unsafe_unretained NSString *venueID;
 } VenueAttributes;
 
+extern const struct VenueRelationships {
+	__unsafe_unretained NSString *location;
+} VenueRelationships;
+
+@class Location;
+
 @interface VenueID : NSManagedObjectID {}
 @end
 
@@ -25,6 +31,10 @@ extern const struct VenueAttributes {
 
 //- (BOOL)validateVenueID:(id*)value_ error:(NSError**)error_;
 
+@property (nonatomic, strong) Location *location;
+
+//- (BOOL)validateLocation:(id*)value_ error:(NSError**)error_;
+
 @end
 
 @interface _Venue (CoreDataGeneratedPrimitiveAccessors)
@@ -34,5 +44,8 @@ extern const struct VenueAttributes {
 
 - (NSString*)primitiveVenueID;
 - (void)setPrimitiveVenueID:(NSString*)value;
+
+- (Location*)primitiveLocation;
+- (void)setPrimitiveLocation:(Location*)value;
 
 @end

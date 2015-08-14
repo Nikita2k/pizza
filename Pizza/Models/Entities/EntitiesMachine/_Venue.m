@@ -8,6 +8,10 @@ const struct VenueAttributes VenueAttributes = {
 	.venueID = @"venueID",
 };
 
+const struct VenueRelationships VenueRelationships = {
+	.location = @"location",
+};
+
 @implementation VenueID
 @end
 
@@ -40,6 +44,8 @@ const struct VenueAttributes VenueAttributes = {
 @dynamic name;
 
 @dynamic venueID;
+
+@dynamic location;
 
 @end
 

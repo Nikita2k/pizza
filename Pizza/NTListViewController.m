@@ -6,9 +6,13 @@
 //  Copyright (c) 2015 Nikita Took. All rights reserved.
 //
 
+#import <MagicalRecord/CoreData+MagicalRecord.h>
 #import "NTListViewController.h"
 #import "NTPizzaCell.h"
 #import "NTPizzaDetailsViewController.h"
+#import "NTFourSquareApiClient.h"
+#import "Venue.h"
+#import "Location.h"
 
 static NSString *const kPizzaPlaceCellIdentifier = @"kPizzaPlaceCellIdentifier";
 static NSString *const kShowDetailsSegue = @"showPizzaDetail";
@@ -16,6 +20,7 @@ static NSString *const kShowDetailsSegue = @"showPizzaDetail";
 @interface NTListViewController () < UITableViewDataSource, UITableViewDelegate >
 
 @property (weak, nonatomic) IBOutlet UITableView *placesTableView;
+@property (strong, nonatomic) NSArray *venues;
 
 @end
 
@@ -24,6 +29,11 @@ static NSString *const kShowDetailsSegue = @"showPizzaDetail";
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    
+    //[[NTFourSquareApiClient sharedInstance] updateVenues];
+    
+    // TODO: background?
+    self.venues = [Venue MR_findAllSortedBy:@"name" ascending:YES];
     
     [self registerTableViewCells];
 
@@ -34,9 +44,7 @@ static NSString *const kShowDetailsSegue = @"showPizzaDetail";
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     NSAssert(tableView == self.placesTableView, @"NTListViewController works only with placesTableView");
-    
-    // TODO: find number of objects
-    return 0;
+    return [self.venues count];
     
 }
 
@@ -44,9 +52,13 @@ static NSString *const kShowDetailsSegue = @"showPizzaDetail";
 
     NSAssert(tableView == self.placesTableView, @"NTListViewController works only with placesTableView");
     
-    NTPizzaCell *cell = [tableView dequeueReusableCellWithIdentifier:kPizzaPlaceCellIdentifier];
+    Venue *venue = [self.venues objectAtIndex:indexPath.row];
+    NSString *dist = [NSString stringWithFormat:@"%d", [[venue.location distance] intValue]];
     
-    // TODO: configure cell
+    NSLog(@"venue name: %@, distance: %@", venue.name, dist);
+    
+    NTPizzaCell *cell = [tableView dequeueReusableCellWithIdentifier:kPizzaPlaceCellIdentifier];
+    [cell configureForVenue:venue];
     
     return cell;
     
